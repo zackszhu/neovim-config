@@ -28,6 +28,9 @@ require("legendary").setup({
 	-- Initial keymaps to bind
 	keymaps = {
 		{ "<leader>s", ":wa<CR>", description = "Write all buffers", opts = {} },
+        { "<leader>bd", ":bd<CR>", description = "Close current buffer", opts = {} },
+        { "<leader>bn", ":bnext<CR>", description = "Go to next buffer", opts = {} },
+        { "<leader>bp", ":bprev<CR>", description = "Go to previous buffer", opts= {} },
 		{ "<leader>gf", require("telescope.builtin").find_files, description = "Go to files", opt = {} },
 		{ "<leader>gg", require("telescope.builtin").live_grep, description = "Go to Grep Results", opt = {} },
 		{ "<leader>gd", vim.lsp.buf.definition, description = "Go to Definition", opt = {} },
@@ -64,7 +67,7 @@ require("legendary").setup({
 		},
         { "<leader>e", ":NvimTreeToggle<CR>", description = "Toggle File Explorer", opt = {} },
         { "<leader>f", vim.lsp.buf.formatting_sync, description = "Formet the File", opt = {} },
-        { "<leader>h", vim.lsp.buf.hover, description = "Hover the cursor", opt = {} },
+        { "<leader>hs", vim.lsp.buf.hover, description = "Hover the cursor to show the signiture", opt = {} },
         { "<leader>tt", ":Telescope yabs tasks<CR>", description = "List and Run Tasks", opt = {} },
 	},
 	-- Initial commands to bind
