@@ -45,7 +45,7 @@ end
 
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.document_highlight then
         vim.api.nvim_create_autocmd({"CursorHold"}, {
             callback = vim.lsp.buf.document_highlight
         });
@@ -67,7 +67,7 @@ end
 
 M.on_attach = function(client, bufnr)
 	if client.name == "clangd" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 	lsp_highlight_document(client)
 end
@@ -76,6 +76,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M

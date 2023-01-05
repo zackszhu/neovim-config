@@ -36,11 +36,11 @@ local options = {
 	sidescrolloff = 8,
 	colorcolumn = "120",
     laststatus = 3, -- Global status line
+    guifont = { "Fira Code", ":h22" },
 }
 
 vim.opt.shortmess:append("c")
 vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
 
 for k, v in pairs(options) do
 	vim.opt[k] = v

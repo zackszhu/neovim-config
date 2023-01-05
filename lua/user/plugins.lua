@@ -48,9 +48,9 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]])
-vim.api.nvim_create_autocmd({"BufWritePost"}, {
-    pattern = "plugins.lua",
-    command = "source <afile> | PackerSync"
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = "plugins.lua",
+	command = "source <afile> | PackerSync",
 })
 
 -- Use a protected call so we don't error out on first use
@@ -75,12 +75,11 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	-- use("nathom/filetype.nvim")
-	use("lewis6991/impatient.nvim")
 	use("stevearc/dressing.nvim")
-    use("mrjones2014/legendary.nvim")
+	use("mrjones2014/legendary.nvim")
 
 	-- Colorschemes
-	use("navarasu/onedark.nvim")
+    use 'navarasu/onedark.nvim'
 	use("kyazdani42/nvim-web-devicons")
 
 	-- cmp plugins
@@ -91,6 +90,7 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
+	use("hrsh7th/cmp-nvim-lsp-signature-help")
 
 	-- Snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -100,6 +100,8 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("simrat39/rust-tools.nvim")
+	use("ray-x/lsp_signature.nvim")
+    use("ziglang/zig.vim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -110,6 +112,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("nvim-treesitter/playground")
 	use("p00f/nvim-ts-rainbow")
 	use("lewis6991/nvim-treesitter-context")
 	-- use("IndianBoy42/tree-sitter-just")
@@ -118,7 +121,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 
 	-- Buffers
-	use{"akinsho/bufferline.nvim", branch = "main"}
+	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
 	use("famiu/bufdelete.nvim")
 	use("nvim-lualine/lualine.nvim")
 
@@ -127,7 +130,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment
 	use("lukas-reineke/indent-blankline.nvim")
-	use{"akinsho/toggleterm.nvim", branch = "main"}
+	use({ "akinsho/toggleterm.nvim", branch = "main" })
 	use("j-hui/fidget.nvim")
 	use("pianocomposer321/yabs.nvim")
 

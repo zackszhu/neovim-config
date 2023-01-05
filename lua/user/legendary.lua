@@ -1,4 +1,4 @@
-local helpers = require("legendary.helpers")
+local helpers = require("legendary.toolbox")
 
 require("legendary").setup({
 	-- Include builtins by default, set to false to disable
@@ -57,7 +57,7 @@ require("legendary").setup({
 			opt = {},
 		},
 		{ "<leader>lc", vim.lsp.buf.code_action, description = "List all code actions under the cursor", opt = {} },
-        { "<leader>lk", helpers.lazy(require('legendary').find, "keymaps"), description = "List all keybindings", opt = {} },
+        { "<leader>lk", helpers.lazy(require('legendary').find, { kind = "keymaps" }), description = "List all keybindings", opt = {} },
 		{ "<leader>r", vim.lsp.buf.rename, description = "Rename under the cursor", opt = {} },
 		{
 			"<leader>d",
@@ -66,7 +66,7 @@ require("legendary").setup({
 			opt = {},
 		},
         { "<leader>e", ":NvimTreeToggle<CR>", description = "Toggle File Explorer", opt = {} },
-        { "<leader>f", vim.lsp.buf.formatting_sync, description = "Formet the File", opt = {} },
+        { "<leader>f", vim.lsp.buf.format, description = "Formet the File", opt = {} },
         { "<leader>hs", vim.lsp.buf.hover, description = "Hover the cursor to show the signiture", opt = {} },
         { "<leader>tt", ":Telescope yabs tasks<CR>", description = "List and Run Tasks", opt = {} },
 	},
@@ -87,7 +87,7 @@ require("legendary").setup({
 	},
 	-- Automatically add which-key tables to legendary
 	-- see "which-key.nvim Integration" below for more details
-	auto_register_which_key = true,
+	auto_register_which_key = false,
 	-- settings for the :LegendaryScratch command
 	scratchpad = {
 		-- configure how to show results of evaluated Lua code,
