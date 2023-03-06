@@ -10,6 +10,7 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
         formatting.clang_format,
+        diagnostics.ruff,
 		-- formatting.rustfmt,
 	},
 })
