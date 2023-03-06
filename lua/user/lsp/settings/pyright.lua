@@ -1,4 +1,4 @@
-return {
+require('lspconfig').pyright.setup ({
 	settings = {
 		python = {
 			analysis = {
@@ -8,4 +8,4 @@ return {
 			},
 		},
 	},
-}
+})

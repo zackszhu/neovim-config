@@ -1,3 +1,1 @@
-return {
-    settings = {},
-}
+require'lspconfig'.zls.setup{}
