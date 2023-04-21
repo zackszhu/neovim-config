@@ -202,7 +202,6 @@ nvim_tree.setup({
 		update_root = false,
 		ignore_list = {},
 	},
-	ignore_ft_on_setup = {},
 	system_open = {
 		cmd = "",
 		args = {},

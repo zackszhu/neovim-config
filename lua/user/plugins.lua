@@ -24,24 +24,22 @@ for _, plugin in pairs(disabled_built_ins) do
 	vim.g["loaded_" .. plugin] = 1
 end
 
-local fn = vim.fn
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
--- My plugins here
+	-- My plugins here
 	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
 	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
 	-- use("nathom/filetype.nvim",
@@ -68,11 +66,11 @@ require("lazy").setup({
 	-- LSP
 	"neovim/nvim-lspconfig", -- enable LSP
 	"williamboman/mason.nvim",
- 	"williamboman/mason-lspconfig.nvim",
+	"williamboman/mason-lspconfig.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 	"simrat39/rust-tools.nvim",
 	"ray-x/lsp_signature.nvim",
-  "ziglang/zig.vim",
+	"ziglang/zig.vim",
 
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
@@ -92,7 +90,7 @@ require("lazy").setup({
 	"lewis6991/gitsigns.nvim",
 
 	-- Buffers
-	{ "akinsho/bufferline.nvim", tag = "v3.*", dependencies = "kyazdani42/nvim-web-devicons" },
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "kyazdani42/nvim-web-devicons" },
 	"famiu/bufdelete.nvim",
 	"nvim-lualine/lualine.nvim",
 
@@ -104,4 +102,12 @@ require("lazy").setup({
 	{ "akinsho/toggleterm.nvim", branch = "main" },
 	"j-hui/fidget.nvim",
 	"pianocomposer321/yabs.nvim",
+	{
+		"ggandor/leap.nvim",
+		config = function()
+            local leap = require("leap")
+			leap.set_default_keymaps()
+			-- leap.leap({ target_windows = { vim.fn.win_getid() } })
+		end,
+	},
 })
