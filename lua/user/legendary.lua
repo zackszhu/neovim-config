@@ -28,7 +28,7 @@ require("legendary").setup({
 	-- Initial keymaps to bind
 	keymaps = {
 		{ "<leader>s", ":wa<CR>", description = "Write all buffers", opts = {} },
-        { "<leader>bd", ":bd<CR>", description = "Close current buffer", opts = {} },
+        { "<leader>bd", ":Bdelete<CR>", description = "Close current buffer", opts = {} },
         { "<leader>bn", ":bnext<CR>", description = "Go to next buffer", opts = {} },
         { "<leader>bp", ":bprev<CR>", description = "Go to previous buffer", opts= {} },
 		{ "<leader>gf", require("telescope.builtin").find_files, description = "Go to files", opt = {} },
@@ -69,6 +69,11 @@ require("legendary").setup({
         { "<leader>f", vim.lsp.buf.format, description = "Formet the File", opt = {} },
         { "<leader>hs", vim.lsp.buf.hover, description = "Hover the cursor to show the signiture", opt = {} },
         { "<leader>tt", ":Telescope yabs tasks<CR>", description = "List and Run Tasks", opt = {} },
+        { "<leader>nn", ":Neorg keybind all core.dirman.new.note<CR>", description = "Create new norg note", opt = {}},
+        { "<leader>nmi", ":Neorg inject-metadata<CR>", description = "Inject metadata to norg note", opt = {}},
+        { "<leader>nmu", ":Neorg update-metadata<CR>", description = "Update metadata to norg note", opt = {}},
+        { "<leader>nl", ":Telescope neorg find_linkable<CR>", description = "Find linkable content in norg workspace", opt = {}},
+        { "<leader>nh", ":Telescope neorg search_headings<CR>", description = "Find header in norg workspace", opt = {}},
 	},
 	-- Initial commands to bind
 	commands = {
@@ -77,13 +82,6 @@ require("legendary").setup({
 	-- Initial augroups and autocmds to bind
 	autocmds = {
 		-- your autocmd tables here
-	},
-	which_key = {
-		-- you can put which-key.nvim tables here,
-		-- or alternatively have them auto-register,
-		-- see section on which-key integration
-		mappings = {},
-		opts = {},
 	},
 	-- Automatically add which-key tables to legendary
 	-- see "which-key.nvim Integration" below for more details

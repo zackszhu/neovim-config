@@ -39,10 +39,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- My plugins here
 	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
 	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
-	-- use("nathom/filetype.nvim",
 	"stevearc/dressing.nvim",
 	"mrjones2014/legendary.nvim",
 
@@ -82,8 +80,8 @@ require("lazy").setup({
 		build = ":TSUpdate",
 	},
 	"nvim-treesitter/playground",
-	"p00f/nvim-ts-rainbow",
-	"lewis6991/nvim-treesitter-context",
+	"HiPhish/nvim-ts-rainbow2",
+	"nvim-treesitter/nvim-treesitter-context",
 	-- use("IndianBoy42/tree-sitter-just",
 
 	-- Git
@@ -98,14 +96,14 @@ require("lazy").setup({
 	"kyazdani42/nvim-tree.lua",
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	"numToStr/Comment.nvim", -- Easily comment
-	"lukas-reineke/indent-blankline.nvim",
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "akinsho/toggleterm.nvim", branch = "main" },
 	"j-hui/fidget.nvim",
 	"pianocomposer321/yabs.nvim",
 	{
 		"ggandor/leap.nvim",
 		config = function()
-            local leap = require("leap")
+			local leap = require("leap")
 			leap.set_default_keymaps()
 			-- leap.leap({ target_windows = { vim.fn.win_getid() } })
 		end,

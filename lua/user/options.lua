@@ -36,7 +36,7 @@ local options = {
 	sidescrolloff = 8,
 	colorcolumn = "120",
     laststatus = 3, -- Global status line
-    guifont = { "Fira Code", ":h22" },
+    guifont = { "IntelOne Mono", ":h22" },
 }
 
 vim.opt.shortmess:append("c")
