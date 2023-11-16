@@ -1,1 +1,1 @@
-require'lspconfig'.zls.setup{}
+require("lspconfig").zls.setup({})
