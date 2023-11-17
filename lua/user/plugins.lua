@@ -72,7 +72,7 @@ require("lazy").setup({
 
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cd build && make' },
 
 	-- TreeSitter
 	{
@@ -82,6 +82,7 @@ require("lazy").setup({
 	"nvim-treesitter/playground",
 	"HiPhish/nvim-ts-rainbow2",
 	"nvim-treesitter/nvim-treesitter-context",
+	"nvim-treesitter/nvim-treesitter-refactor",	
 	-- use("IndianBoy42/tree-sitter-just",
 
 	-- Git
