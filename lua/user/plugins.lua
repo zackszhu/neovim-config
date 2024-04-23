@@ -39,7 +39,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
+    "nvim-lua/popup.nvim",   -- An implementation of the Popup API from vim in Neovim
     "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
     "stevearc/dressing.nvim",
     "mrjones2014/legendary.nvim",
@@ -49,19 +49,27 @@ require("lazy").setup({
     "kyazdani42/nvim-web-devicons",
 
     -- cmp plugins
-    "hrsh7th/nvim-cmp",      -- The completion plugin
-    "hrsh7th/cmp-buffer",    -- buffer completions
-    "hrsh7th/cmp-path",      -- path completions
-    "hrsh7th/cmp-cmdline",   -- cmdline completions
+    "hrsh7th/nvim-cmp",         -- The completion plugin
+    "hrsh7th/cmp-buffer",       -- buffer completions
+    "hrsh7th/cmp-path",         -- path completions
+    "hrsh7th/cmp-cmdline",      -- cmdline completions
     "saadparwaiz1/cmp_luasnip", -- snippet completions
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
     "hrsh7th/cmp-nvim-lsp-signature-help",
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+        -- use opts = {} for passing setup options
+        -- this is equalent to setup({}) function
+    },
 
     -- Snippets
-    { "L3MON4D3/LuaSnip",
+    {
+        "L3MON4D3/LuaSnip",
         version = "v2.*",
-        build = "make install_jsregexp"--snippet engine
+        build = "make install_jsregexp" --snippet engine
     },
 
     -- LSP
@@ -75,9 +83,11 @@ require("lazy").setup({
 
     -- Telescope
     "nvim-telescope/telescope.nvim",
-    { 'nvim-telescope/telescope-fzf-native.nvim',
+    {
+        'nvim-telescope/telescope-fzf-native.nvim',
         build =
-        'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cd build && make' },
+        'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cd build && make'
+    },
 
     -- TreeSitter
     {
@@ -94,8 +104,12 @@ require("lazy").setup({
     "lewis6991/gitsigns.nvim",
 
     -- Buffers
-    { "akinsho/bufferline.nvim",                  version = "*",                                                                                                     dependencies =
-    "kyazdani42/nvim-web-devicons" },
+    {
+        "akinsho/bufferline.nvim",
+        version = "*",
+        dependencies =
+        "kyazdani42/nvim-web-devicons"
+    },
     "famiu/bufdelete.nvim",
     "nvim-lualine/lualine.nvim",
 
