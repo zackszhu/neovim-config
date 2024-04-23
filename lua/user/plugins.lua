@@ -59,7 +59,10 @@ require("lazy").setup({
     "hrsh7th/cmp-nvim-lsp-signature-help",
 
     -- Snippets
-    "L3MON4D3/LuaSnip", --snippet engine
+    { "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        build = "make install_jsregexp"--snippet engine
+    },
 
     -- LSP
     "neovim/nvim-lspconfig", -- enable LSP
