@@ -115,7 +115,6 @@ require("lazy").setup({
 
     -- Other
     "kyazdani42/nvim-tree.lua",
-    "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
     "numToStr/Comment.nvim", -- Easily comment
     { "lukas-reineke/indent-blankline.nvim", main = "ibl",   opts = {} },
     { "akinsho/toggleterm.nvim",             branch = "main" },
