@@ -1,5 +1,7 @@
 if vim.g.vscode then
 	-- VSCode extension
+    require("user.treesitter")
+    require("leap")
 else
 	-- ordinary Neovim
 	require("user.options")
@@ -23,4 +25,5 @@ else
 	require("user.yabs")
 	require("user.dressing")
 	require("user.legendary")
+    require("user.leap")
 end
