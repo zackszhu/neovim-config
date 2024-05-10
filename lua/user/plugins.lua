@@ -46,7 +46,7 @@ require("lazy").setup({
 
     -- Colorschemes
     "navarasu/onedark.nvim",
-    "kyazdani42/nvim-web-devicons",
+    "nvim-tree/nvim-web-devicons",
 
     -- cmp plugins
     "hrsh7th/nvim-cmp",         -- The completion plugin
