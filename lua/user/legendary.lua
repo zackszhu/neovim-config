@@ -40,7 +40,7 @@ require("legendary").setup({
 		{ "<leader>ll", require("telescope.builtin").lsp_references, description = "List References", opt = {} },
 		{
 			"<leader>ls",
-			require("telescope.builtin").lsp_workspace_symbols,
+			require("telescope.builtin").lsp_dynamic_workspace_symbols,
 			description = "List all symbols in the workspace",
 			opt = {},
 		},
