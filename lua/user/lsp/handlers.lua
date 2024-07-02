@@ -46,18 +46,20 @@ end
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
 	if client.server_capabilities.document_highlight then
-        vim.api.nvim_create_autocmd({"CursorHold"}, {
-            callback = vim.lsp.buf.document_highlight
-        });
-        vim.api.nvim_create_autocmd({"CursorMoved"}, {
-            callback = vim.lsp.buf.clear_references
-        });
+		vim.api.nvim_create_autocmd({ "CursorHold" }, {
+			callback = vim.lsp.buf.document_highlight,
+		})
+		vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+			callback = vim.lsp.buf.clear_references,
+		})
 	end
 end
 
 M.on_attach = function(client, bufnr)
 	if client.name == "clangd" then
 		client.server_capabilities.document_formatting = false
+		require("clangd_extensions.inlay_hints").setup_autocmd()
+		require("clangd_extensions.inlay_hints").set_inlay_hints()
 	end
 	lsp_highlight_document(client)
 end

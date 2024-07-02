@@ -57,6 +57,8 @@ require("lazy").setup({
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-nvim-lua",
 	"hrsh7th/cmp-nvim-lsp-signature-help",
+	"hrsh7th/cmp-nvim-lsp-document-symbol",
+	"lukas-reineke/cmp-under-comparator",
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
@@ -78,6 +80,7 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 	"simrat39/rust-tools.nvim",
+	"p00f/clangd_extensions.nvim",
 	"ray-x/lsp_signature.nvim",
 	"ziglang/zig.vim",
 	{
